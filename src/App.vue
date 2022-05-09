@@ -1,12 +1,44 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
+  <nav-bar />
   <router-view/>
+  <footer-bar />
 </template>
 
+<script>
+import '@fortawesome/fontawesome-free/css/all.css';
+// @ is an alias to /src
+import NavBar from '@/components/NavBar.vue'
+import FooterBar from '@/components/FooterBar.vue'
+
+export default {
+  name: 'App',
+  components: {
+    NavBar,
+    FooterBar,
+  }
+}
+</script>
+
+
 <style lang="scss">
+
+
+* {
+    font-family: 'Macondo', cursive;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h5 {
+  font-size: 1.4rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

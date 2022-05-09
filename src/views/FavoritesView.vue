@@ -1,8 +1,10 @@
 <template>
   <div class="container">
-    <h1 class="text-center m-3">Películas de Studio Ghibli</h1>
+    <h1 class="text-center m-3">Mis Favoritos</h1>
     <!-- <Search /> -->
+    <button v-on:click="pp">sdfsdfds</button>
     <CardProduct />
+    
   </div>
 </template>
 
@@ -15,7 +17,14 @@ export default {
   name: 'HomeView',
   components: {
     CardProduct,
-    // Search,
+  },
+
+  props: ['favorites'],
+
+  methods: {
+    pp() {
+      console.log(this.favorites)
+    }
   }
 }
 </script>
