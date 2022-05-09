@@ -3,15 +3,16 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title text-primary fw-bold" id="exampleModalLabel">{{ movie.title }}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <slot></slot>
-        {{ movie }}
-      </div>
+        <p>{{ movie.description }}</p>
+        <img :src="movie.movie_banner" class="card-img-top" :alt="movie.title">
+        <h5 class="mt-2">Director: {{ movie.director }}</h5>
+        </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
@@ -21,14 +22,10 @@
 
 <script>
 export default {
+  name: 'ModalMovie',
 
   props: ['movie'],
 
-  methods: {
-    showMovie() {
-      console.log("probando")
-    }
-  }
 
 }
 </script>

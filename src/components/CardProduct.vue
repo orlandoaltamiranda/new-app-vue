@@ -9,13 +9,13 @@
         <div class="card-body">
           <h5 class="card-title fw-bold">{{ item.title }}</h5>
           <p class="card-text">{{ item.director }}</p>
-          <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" v-on:click="showMovie">Más detalles</a>
+          <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" v-on:click="showMovie(item)">Más detalles</a>
           <button href="#" class="btn btn-success ms-3" v-on:click="addFavorites(item)">Añadir a Favoritos</button>
         </div>
       </div>
     </div>
   </div>
-  <modal movie= 'dsfs'> </modal>  
+  <modal :movie='movie'> </modal>  
 </template>
 
 <script>
@@ -33,6 +33,7 @@ export default {
       result: [],
       busqueda: '',
       favorites: [],
+      movie: {}
       }
   },
   
@@ -50,10 +51,11 @@ export default {
       } else {
           this.favorites.push(item);
       }
+      console.log(this.favorites)
     },
 
-    showMovie(){
-      console.log("hola pooos")
+    showMovie(object){
+      this.movie = object
     }
   },
 

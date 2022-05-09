@@ -1,7 +1,8 @@
 <template>
   <div class="container">
     <h1 class="text-center m-3">Mis Favoritos</h1>
-    <CardProduct />
+    
+    {{ this.favorites}}
   </div>
 </template>
 
