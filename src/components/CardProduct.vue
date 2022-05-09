@@ -15,7 +15,7 @@
       </div>
     </div>
   </div>
-  <modal movie="Aqui va dato de la tarjeta"> </modal>  
+  <modal movie= 'dsfs'> </modal>  
 </template>
 
 <script>

@@ -1,10 +1,7 @@
 <template>
   <div class="container">
     <h1 class="text-center m-3">Mis Favoritos</h1>
-    <!-- <Search /> -->
-    <button v-on:click="pp">sdfsdfds</button>
     <CardProduct />
-    
   </div>
 </template>
 
