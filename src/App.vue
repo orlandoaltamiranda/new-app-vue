@@ -6,6 +6,7 @@
 
 <script>
 import '@fortawesome/fontawesome-free/css/all.css';
+
 // @ is an alias to /src
 import NavBar from '@/components/NavBar.vue'
 import FooterBar from '@/components/FooterBar.vue'
@@ -21,10 +22,11 @@ export default {
 
 
 <style lang="scss">
-
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
 
 * {
     font-family: 'Macondo', cursive;
+    text-align: center;
 }
 
 h1 {
