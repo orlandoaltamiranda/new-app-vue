@@ -10,7 +10,8 @@
           <h5 class="card-title fw-bold">{{ item.title }}</h5>
           <p class="card-text">{{ item.director }}</p>
           <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" v-on:click="showMovie(item)">Más detalles</a>
-          <button href="#" class="btn btn-success ms-3" v-on:click="addFavorites(item)">Añadir a Favoritos</button>
+          <i class="fa-solid fa-heart btn btn-outline-danger m-2 fs-3" v-on:click="addFavorites(item)"></i>
+          <i class="fa-solid fa-cart-plus btn btn-outline-success m-2 fs-3"></i>
         </div>
       </div>
     </div>
@@ -33,7 +34,7 @@ export default {
       result: [],
       busqueda: '',
       favorites: [],
-      movie: {}
+      movie: {},
       }
   },
   
@@ -56,6 +57,10 @@ export default {
 
     showMovie(object){
       this.movie = object
+    },
+
+    cambiarVista(tipo) {
+      this.vista = !this.vista
     }
   },
 
@@ -70,5 +75,9 @@ export default {
 </script>
 
 <style>
+
+i:hover {
+  color: black;
+}
 
 </style>
