@@ -11,7 +11,7 @@
           <p class="card-text">{{ item.director }}</p>
           <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" v-on:click="showMovie(item)">Más detalles</a>
           <i class="fa-solid fa-heart btn btn-outline-danger m-2 fs-3" v-on:click="addFavorites(item)"></i>
-          <i class="fa-solid fa-cart-plus btn btn-outline-success m-2 fs-3"></i>
+          <i class="fa-solid fa-cart-plus btn btn-outline-success m-2 fs-3" v-on:click="addCar(item)"></i>
         </div>
       </div>
     </div>
@@ -35,6 +35,7 @@ export default {
       busqueda: '',
       favorites: [],
       movie: {},
+      carShop: [],
       }
   },
   
@@ -53,6 +54,17 @@ export default {
           this.favorites.push(item);
       }
       console.log(this.favorites)
+    },
+
+    addCar(item){
+    const repeat = this.carShop.some(personaje=>personaje == item);
+
+      if (repeat) {
+          console.log('Ya está en tus favoritos')
+      } else {
+          this.carShop.push(item);
+      }
+      console.log(this.carShop)
     },
 
     showMovie(object){
